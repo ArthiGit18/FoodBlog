@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+
+    .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .banner-content {
+            text-align: center;
+            color: #fff;
+            max-width: 700px;
+            padding: 20px;
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 15px;
+                animation: fadeInDown 1s ease-in-out;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                animation: fadeInUp 1s ease-in-out;
+            }
+
+            button {
+                padding: 12px 30px;
+                font-size: 1rem;
+                background-color: #fff;
+                color: #000;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+
+    .banner-dishbar {
+        position: absolute;
+        bottom: -90px;
+        width: 100%;
+        padding: 10px 0;
+        // background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+// DishBar Styles
+.dishbar-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.dishbox {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    // border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: 4px solid white;
+    animation: blinkImage 1.5s infinite alternate;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        
+    }
+
+    .dishbox-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 10px 20px;
+        // border-radius: 5px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    &:hover .dishbox-title {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+// @keyframes blinkImage {
+//     0% {
+//         opacity: 1;
+//     }
+
+//     100% {
+//         opacity: 0.6;
+//     }
+// }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .navbar-links {
+        display: flex;
+        gap: 25px;
+
+        a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+
+    .navbar-search-auth {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+
+            &:focus {
+                outline: none;
+                border-color: #999;
+            }
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+                background-color: #555;
+            }
+
+            &.login {
+                background-color: #0077ff;
+
+                &:hover {
+                    background-color: #005fcb;
+                }
+            }
+        }
+    }
+}
