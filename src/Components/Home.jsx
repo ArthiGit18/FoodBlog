@@ -6,6 +6,8 @@ import TopRecipes from '../Pages/TopRecipes'
 import CategoryScroll from '../Pages/CategoryScroll'
 import LatestRecipes from '../Pages/LatestRecipe'
 import NavMenu from '../Pages/NavMenu'
+import SubscriptionSection from '../Pages/Subscription'
+import Footer from '../Pages/Footer'
 
 const Home = () => {
     return (
@@ -17,6 +19,8 @@ const Home = () => {
             <TopRecipes />
             <CategoryScroll />
             <LatestRecipes />
+            <SubscriptionSection />
+            <Footer />
         </>
     )
 }

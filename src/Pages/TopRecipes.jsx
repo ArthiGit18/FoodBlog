@@ -1,65 +1,64 @@
-import React from 'react';
-
-const recipes = [
-    {
-        title: 'Creamy Mushroom Pasta',
-        description: 'A rich and creamy mushroom pasta that’s quick to prepare and delicious to eat. Perfect for dinner nights.',
-        image: '/assets/banner/1.jpg',
-        rating: 4.5,
-        reviews: 122,
-    },
-    {
-        title: 'Avocado Smoothie',
-        description: 'A healthy and refreshing smoothie made with ripe avocados and natural sweeteners. Great for summer!',
-        image: '/assets/banner/2.jpg',
-        rating: 4.8,
-        reviews: 89,
-    },
-    {
-        title: 'Classic Cheeseburger',
-        description: 'Juicy beef patty, melted cheese, and fresh buns make this burger a timeless favorite.',
-        image: '/assets/banner/3.jpg',
-        rating: 4.7,
-        reviews: 156,
-    },
-    {
-        title: 'Spicy Tandoori Chicken',
-        description: 'Marinated in yogurt and spices, this grilled tandoori chicken is bursting with flavor.',
-        image: '/assets/banner/4.jpg',
-        rating: 4.9,
-        reviews: 210,
-    },
-];
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const TopRecipes = () => {
+    const [recipes, setRecipes] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            try {
+                const requests = Array.from({ length: 4 }, () =>
+                    axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+                );
+                const responses = await Promise.all(requests);
+                const meals = responses.map((res) => res.data.meals[0]);
+                setRecipes(meals);
+            } catch (error) {
+                console.error('Error fetching recipes:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchRecipes();
+    }, []);
+
     return (
         <section className="top-recipes">
             <div className="top-heading">
                 <h2>Top Recipes</h2>
-                <a href="/recipes" className="view-more">
+                <NavLink to="/recipes" className="view-more">
                     View More →
-                </a>
+                </NavLink>
             </div>
 
-            <div className="recipe-grid">
-                {recipes.map((recipe, index) => (
-                    <div className="recipe-card" key={index}>
-                        <div className="image-container">
-                            <img src={recipe.image} alt={recipe.title} />
-                            <span className="like-icon">❤️</span>
-                        </div>
-                        <div className="recipe-info">
-                            <h3>{recipe.title}</h3>
-                            <p>{recipe.description}</p>
-                            <div className="rating">
-                                <span>⭐ {recipe.rating}</span>
-                                <span>({recipe.reviews} reviews)</span>
+            {loading ? (
+                <p>Loading recipes...</p>
+            ) : (
+                <div className="recipe-grid">
+                    {recipes.map((recipe) => (
+                        <div className="recipe-card" key={recipe.idMeal}>
+                            <div className="image-container">
+                                <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                                <span className="like-icon">❤️</span>
                             </div>
-                            <button>View</button>
+                            <div className="recipe-info">
+                                <h3>{recipe.strMeal}</h3>
+                                <p>{recipe.strInstructions?.slice(0, 100)}...</p>
+                                <div className="rating">
+                                    <span>⭐ 4.{Math.floor(Math.random() * 5 + 5)}</span>
+                                    <span>({Math.floor(Math.random() * 200 + 50)} reviews)</span>
+                                </div>
+                                <NavLink to={`/recipe/${recipe.idMeal}`}>
+                                    <button>View</button>
+                                </NavLink>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            )}
         </section>
     );
 };

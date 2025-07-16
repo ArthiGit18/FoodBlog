@@ -1,0 +1,92 @@
+[
+    {
+        "title": "Home",
+        "link": "/"
+    },
+    {
+        "title": "Recipe",
+        "link": "/recipes",
+        "subItems": [
+            {
+                "title": "All Recipes",
+                "link": "/recipes/all"
+            },
+            {
+                "title": "Vegetarian",
+                "link": "/recipes/vegetarian"
+            },
+            {
+                "title": "Non-Vegetarian",
+                "link": "/recipes/non-veg"
+            }
+        ]
+    },
+    {
+        "title": "Categories",
+        "link": "/categories",
+        "subItems": [
+            {
+                "title": "Breakfast",
+                "link": "/categories/breakfast"
+            },
+            {
+                "title": "Lunch",
+                "link": "/categories/lunch"
+            },
+            {
+                "title": "Dinner",
+                "link": "/categories/dinner"
+            }
+        ]
+    },
+    {
+        "title": "Top Recipes",
+        "link": "/top-recipes",
+        "subItems": [
+            {
+                "title": "Most Liked",
+                "link": "/top-recipes/liked"
+            },
+            {
+                "title": "Recent",
+                "link": "/top-recipes/recent"
+            }
+        ]
+    },
+    {
+        "title": "Smoothies",
+        "link": "/smoothies",
+        "subItems": [
+            {
+                "title": "Fruit",
+                "link": "/smoothies/fruit"
+            },
+            {
+                "title": "Green",
+                "link": "/smoothies/green"
+            }
+        ]
+    },
+    {
+        "title": "Quick Bites",
+        "link": "/quick-bites",
+        "subItems": [
+            {
+                "title": "Snacks",
+                "link": "/quick-bites/snacks"
+            },
+            {
+                "title": "Sandwiches",
+                "link": "/quick-bites/sandwiches"
+            }
+        ]
+    },
+    {
+        "title": "About",
+        "link": "/about"
+    },
+    {
+        "title": "Contact",
+        "link": "/contact"
+    }
+]
