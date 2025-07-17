@@ -5,7 +5,7 @@ import axios from 'axios';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
-const ListPage = () => {
+const ListPageCategory = () => {
     const { category } = useParams(); // 'category' holds the area name (e.g., "Canadian")
     const [recipes, setRecipes] = useState([]);
 
@@ -14,7 +14,7 @@ const ListPage = () => {
             try {
                 // Fetch recipes by area instead of category
                 const response = await axios.get(
-                    `https://www.themealdb.com/api/json/v1/1/filter.php?a=${category}`
+                    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
                 );
                 setRecipes(response.data.meals || []);
             } catch (error) {
@@ -57,4 +57,4 @@ const ListPage = () => {
     );
 };
 
-export default ListPage;
+export default ListPageCategory;

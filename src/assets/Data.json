@@ -13,11 +13,11 @@
             },
             {
                 "title": "Vegetarian",
-                "link": "/recipes/vegetarian"
+                "link": "/categoryRecipe/vegetarian"
             },
             {
                 "title": "Non-Vegetarian",
-                "link": "/recipes/non-veg"
+                "link": "/categoryRecipe/non-veg"
             }
         ]
     },
@@ -53,34 +53,7 @@
             }
         ]
     },
-    {
-        "title": "Smoothies",
-        "link": "/smoothies",
-        "subItems": [
-            {
-                "title": "Fruit",
-                "link": "/smoothies/fruit"
-            },
-            {
-                "title": "Green",
-                "link": "/smoothies/green"
-            }
-        ]
-    },
-    {
-        "title": "Quick Bites",
-        "link": "/quick-bites",
-        "subItems": [
-            {
-                "title": "Snacks",
-                "link": "/quick-bites/snacks"
-            },
-            {
-                "title": "Sandwiches",
-                "link": "/quick-bites/sandwiches"
-            }
-        ]
-    },
+    
     {
         "title": "About",
         "link": "/about"

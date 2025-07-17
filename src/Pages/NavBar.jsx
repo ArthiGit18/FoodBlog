@@ -27,8 +27,7 @@ const NavBar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <img src="/assets/logo.png" alt="Epicure Logo" />
-                <span>Epicure</span>
+                <img src="/assets/logo/1.png" alt="Epicure Logo" />  
             </div>
 
             <form className="navbar-search-auth" onSubmit={handleSearch}>
