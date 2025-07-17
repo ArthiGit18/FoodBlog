@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 
 .banner {
     position: relative;
@@ -175,9 +176,10 @@
         }
 
         span {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: "Mea Culpa", cursive;
+            color: #0a4300;
         }
     }
 

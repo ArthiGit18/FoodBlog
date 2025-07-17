@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -26,9 +26,12 @@ const NavBar = () => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-logo">
-                <img src="/assets/logo/1.png" alt="Epicure Logo" />  
-            </div>
+            <NavLink to="/" className="navbar-logo">
+
+                <img src="/assets/logo/1.png" alt="Epicure Logo" />
+                <span>Epicure</span>
+
+            </NavLink>
 
             <form className="navbar-search-auth" onSubmit={handleSearch}>
                 <input
