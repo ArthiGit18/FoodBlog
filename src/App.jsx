@@ -6,6 +6,7 @@ import RecipeDetail from './Pages/RecipeDetail';
 import SearchResults from './Pages/SearchResult';
 import ListPageCategory from './Pages/ListPageCategory';
 import ListPageRecipe from './Pages/ListPageRecipe';
+import AllRecipeList from './Pages/AllRecipeList';
 const App = () => {
   return (
     <Router>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/categoryFood/:category" element={<ListPageCategory />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/recipes" element={<AllRecipeList />} />
       </Routes>
     </Router>
   )
